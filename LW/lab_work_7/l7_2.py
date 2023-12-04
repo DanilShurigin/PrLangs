@@ -1,27 +1,25 @@
-import socketserver
 import socket
 
 students = (
-  "TestStudent",
-  "anotherStudent"
+  "test", "first"
 )
 
-class UDPNameSearcher(socketserver.DatagramRequestHandler):
-  def handle(self) -> None:
-    self.data = self.rfile.readline()
-    print(f"{self.client_address} wrote:")
+with socket.socket(type=socket.SOCK_DGRAM) as serversocket:
+  serversocket.bind(('', 7777))
+  while True:
+    data, addr = serversocket.recvfrom(4096)
+    print('Client addr: ', addr)
 
-    name = self.data.decode()[:-1]
+    name = data.decode()[:-1]
+    print('Client sent: ', name)
 
-    if( name in students ):
-      request = f"Hello, {name}!"
+    if (name in students):
+      message = bytes(f"Hello, {name}!\n".encode())
+      print(f"{name} is present in students")
     else:
-      request = "Who are you?"
+      message = bytes(b"Who are you?\n")
+      print("Unknown name")
     
-    bytes_obj = bytes(request, encoding='utf-8')
+    print('-'*10)
+    serversocket.sendto(message, addr)
 
-    self.wfile.write(bytes_obj)
-
-with socketserver.UDPServer(('', 7777), UDPNameSearcher) as server:
-  server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-  server.serve_forever()

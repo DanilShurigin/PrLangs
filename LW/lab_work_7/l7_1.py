@@ -1,27 +1,25 @@
-import socketserver
 import socket
 
 students = (
-  "TestStudent",
-  "anotherStudent"
+  "test", "first"
 )
 
-class TCPNameSearcher(socketserver.StreamRequestHandler):
-  def handle(self) -> None:
-    self.data = self.rfile.readline()
-    print(f"{self.client_address} wrote:")
+with socket.create_server(('', 7777)) as serversocket:
+  while True:
+    conn, addr = serversocket.accept()
+    print('Client addr: ', addr)
 
-    name = self.data.decode()[:-1]
+    data = conn.recv(4096)
+    name = data.decode()[:-1]
+    print('Client sent: ', name)
 
-    if( name in students ):
-      request = f"Hello, {name}!"
+    if (name in students):
+      message = bytes(f"Hello, {name}\n".encode())
+      print(f"{name} is present in students")
     else:
-      request = "Who are you?"
+      message = bytes(b"Who are you?\n")
+      print("Unknown name")
     
-    bytes_obj = bytes(request, encoding='utf-8')
-
-    self.wfile.write(bytes_obj)
-
-with socketserver.TCPServer(('', 7777), TCPNameSearcher) as server:
-  server.socket.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-  server.serve_forever()
+    print('-'*10)
+    conn.send(message)
+    conn.close()
