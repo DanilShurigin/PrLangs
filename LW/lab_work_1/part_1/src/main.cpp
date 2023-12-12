@@ -6,41 +6,43 @@
 using namespace std;
 
 // проверка, чтобы строка состояла только из прописных букв
-bool isValid(const string& s) {
+bool isValid(const wstring& s) {
     for(auto c:s)
-        if (!isalpha(c) || !isupper(c))
+        if (!iswalpha(c) || !iswupper(c))
             return false;
     return true;
 }
 
 int main(int argc, char **argv) {
-    string key;
-    string text;
+    locale loc("ru_RU.UTF-8");
+    locale::global(loc);
+    wstring key;
+    wstring text;
     unsigned op;
-    cout<<"Cipher ready. Input key: ";
-    cin>>key;
+    wcout<<"Cipher ready. Input key: ";
+    wcin>>key;
     if (!isValid(key)) {
         cerr<<"key not valid\n";
         return 1;
     }
-    cout<<"Key loaded\n";
+    wcout<<"Key loaded\n";
     modAlphaCipher cipher(key);
     do {
-        cout<<"Cipher ready. Input operation (0-exit, 1-encrypt, 2-decrypt): ";
-        cin>>op;
+        wcout<<"Cipher ready. Input operation (0-exit, 1-encrypt, 2-decrypt): ";
+        wcin>>op;
         if (op > 2) {
-            cout<<"Illegal operation\n";
+            wcout<<"Illegal operation\n";
         } else if (op >0) {
-            cout<<"Cipher ready. Input text: ";
-            cin>>text;
+            wcout<<"Cipher ready. Input text: ";
+            wcin>>text;
             if (isValid(text)) {
                 if (op==1) {
-                    cout<<"Encrypted text: "<<cipher.encrypt(text)<<endl;
+                    wcout<<"Encrypted text: "<<cipher.encrypt(text)<<endl;
                 } else {
-                    cout<<"Decrypted text: "<<cipher.decrypt(text)<<endl;
+                    wcout<<"Decrypted text: "<<cipher.decrypt(text)<<endl;
                 }
             } else {
-                cout<<"Operation aborted: invalid text\n";
+                wcout<<"Operation aborted: invalid text\n";
             }
         }
     } while (op!=0);
