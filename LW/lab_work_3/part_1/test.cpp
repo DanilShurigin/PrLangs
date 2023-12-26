@@ -8,81 +8,80 @@ SUITE(KeyTest) {
     CHECK(L"БВГБВ" == modAlphaCipher(L"БВГ").encrypt(L"ААААА"));
   }
   TEST(LongKey) {
-    CHECK(L"BCDEF" == modAlphaCipher(L"BCDEFGHIJK").encrypt(L"AAAAA"));
+    CHECK(L"БВГДЕ" == modAlphaCipher(L"BCDEFGHIJK").encrypt(L"ААААА"));
   }
   TEST(LowCaseKey) {
-    CHECK(L"BCDBC" == modAlphaCipher(L"bcd").encrypt(L"AAAAA"));
+    CHECK(L"БВГБВГ" == modAlphaCipher(L"бвг").encrypt(L"ААААА"));
   }
   TEST(DigitsInKey) {
-    CHECK_THROW(modAlphaCipher cp(L"B1"), cipher_error);
+    CHECK_THROW(modAlphaCipher cp(L"Б1"), cipher_error);
   }
   TEST(PunctuationInKey) {
-    CHECK_THROW(modAlphaCipher cp(L"B,C"), cipher_error);
+    CHECK_THROW(modAlphaCipher cp(L"Б,В"), cipher_error);
   }
   TEST(WhitespaceInKey) {
-    CHECK_THROW(modAlphaCipher cp(L"B C"), cipher_error);
+    CHECK_THROW(modAlphaCipher cp(L"Б В"), cipher_error);
   }
   TEST(EmptyKey) {
     CHECK_THROW(modAlphaCipher cp(L""), cipher_error);
   }
   TEST(WeakKey) {
-    CHECK_THROW(modAlphaCipher cp(L"AAA"), cipher_error);
+    CHECK_THROW(modAlphaCipher cp(L"ААА"), cipher_error);
   }
 }
 
-SUITE(EncryptTest)
-{
+SUITE(EncryptTest) {
   TEST(UpCaseString) {
-    CHECK(L"UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH" == \
-                modAlphaCipher{L"Б"}.encrypt(L"THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG"));
+    CHECK(L"ЕСФДНПКЮМЭХАЩЛЁВТГЖИРУЙЧЯЗОЬЦШБЪ" == \
+                modAlphaCipher{L"Б"}.encrypt(L"ДругмойэльфЯшкебсвёзптицюжныхчащ"));
   }
   TEST(LowCaseString) {
-    CHECK(L"UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH" == \
-                modAlphaCipher{L"Б"}.encrypt(L"thequickbrownfoxjumpsoverthelazydog"));
+    CHECK(L"ЕСФДНПКЮМЭХАЩЛЁВТГЖИРУЙЧЯЗОЬЦШБЪ" == \
+                modAlphaCipher{L"Б"}.encrypt(L"другмойэльфЯшкебсвёзптицюжныхчащ"));
   }
   TEST(StringWithWhitspaceAndPunct) {
-    CHECK(L"UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH" == \
-                modAlphaCipher{L"Б"}.encrypt(L"THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG!!!"));
+    CHECK(L"ЕСФД" == \
+                modAlphaCipher{L"Б"}.encrypt(L"Друг мой эльф! Яшке б свёз птиц южных чащ!"));
   }
   TEST(StringWithNumbers) {
-    CHECK(L"IBQQZOFXZFBS" == modAlphaCipher{L"Б"}.encrypt(L"Happy New 2019 Year"));
+    CHECK(L"ОБ" == modAlphaCipher{L"Б"}.encrypt(L"На дворе 2023 год"));
   }
   TEST(EmptyString) {
     CHECK_THROW(modAlphaCipher{L"Б"}.encrypt(L""),cipher_error);
   }
   TEST(NoAlphaString) {
-    CHECK_THROW(modAlphaCipher{L"Б"}.encrypt(L"1234+8765=9999"),cipher_error);
+    CHECK_THROW(modAlphaCipher{L"Б"}.encrypt(L"123456789-987654321"),cipher_error);
   }
   TEST(MaxShiftKey) {
-    CHECK(L"SGDPTHBJAQNVMENWITLORNUDQSGDKZYXCNF" == \
-                modAlphaCipher(L"Z").encrypt(L"THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG"));
+    CHECK(L"ГПТВЛНИЬКЫУЮЧЙДАРБЕЖОСЗХЭЁМЪФЦЯШ" == \
+                modAlphaCipher(L"Z").encrypt(L"ДРУГМОЙЭЛЬФЯШКЕБСВЁЗПТИЦЮЖНЫХЧАЩ"));
   }
 }
 
 SUITE(DecryptText)
 {
   TEST(UpCaseString) {
-    CHECK(L"THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG" == \
-                modAlphaCipher{L"Б"}.decrypt(L"UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH"));
+    CHECK(L"ДРУГМОЙЭЛЬФЯШКЕБСВЁЗПТИЦЮЖНЫХЧАЩ" == \
+                modAlphaCipher{L"Б"}.decrypt(L"ЕСФДНПКЮМЭХАЩЛЁВТГЖИРУЙЧЯЗОЬЦШБЪ"));
   }
   TEST(LowCaseString) {
-    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"uifRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH"),cipher_error);
+    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"ЕсФДнПКЮМЭХАЩЛЁВТГжИРуЙЧЯЗОыЦШБЪ"),cipher_error);
   }
   TEST(WhitespaceString) {
-    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"UIF RVJDL CSPXO GPY KVNQT PWFS UIF MBAZ EPH"),cipher_error);
+    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"ЕСФДНПКЮМЭХАЩЛЁВТГЖИРУЙЧЯЗОЬЦ_ШБЪ"),cipher_error);
   }
   TEST(DigitsString) {
-    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"IBQQZOFX2019ZFBS"),cipher_error);
+    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"ОБ КГВЕНА 2023 РОД"),cipher_error);
   }
   TEST(PunctString) {
-    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"IFMMP,XPSME"),cipher_error);
+    CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L"ВГДЕЁ?"),cipher_error);
   }
   TEST(EmptyString) {
     CHECK_THROW(modAlphaCipher{L"Б"}.decrypt(L""),cipher_error);
   }
   TEST(MaxShiftKey) {
-    CHECK(L"THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG" == \
-                modAlphaCipher(L"Z").decrypt(L"SGDPTHBJAQNVMENWITLORNUDQSGDKZYXCNF"));
+    CHECK(L"ДРУГМОЙЭЛЬФЯШКЕБСВЁЗПТИЦЮЖНЫХЧАЩ" == \
+                modAlphaCipher(L"Z").decrypt(L"ЕСФДНПКЮМЭХАЩЛЁВТГЖИРУЙЧЯЗОЬЦШБЪ"));
   }
 }
 

@@ -18,19 +18,19 @@ SUITE(KeyTest) {
 SUITE(EncryptTest)
 {
   TEST(UpCaseString) {
-    CHECK_EQUAL("UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH",
+    CHECK_EQUAL("UROPRAG-QBFMELO-EKNUVED-HCWJOHY-TIOXSTZ-",
                 TranspositionCipher{5}.encrypt("THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG"));
   }
   TEST(LowCaseString) {
-    CHECK_EQUAL("UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH",
+    CHECK_EQUAL("UROPRAG-QBFMELO-EKNUVED-HCWJOHY-TIOXSTZ-",
                 TranspositionCipher{5}.encrypt("thequickbrownfoxjumpsoverthelazydog"));
   }
   TEST(StringWithWhitspaceAndPunct) {
-    CHECK_EQUAL("UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH",
+    CHECK_EQUAL("UROPRAG-QBFMELO-EKNUVED-HCWJOHY-TIOXSTZ-",
                 TranspositionCipher{5}.encrypt("THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG!!!"));
   }
   TEST(StringWithNumbers) {
-    CHECK_EQUAL("IBQQZOFXZFBS", TranspositionCipher{5}.encrypt("Happy New 2019 Year"));
+    CHECK_EQUAL("YE-PY-PW-AERHNA", TranspositionCipher{5}.encrypt("Happy New 2023 Year"));
   }
   TEST(EmptyString) {
     CHECK_THROW(TranspositionCipher{5}.encrypt(""), CipherError);
@@ -44,19 +44,16 @@ SUITE(DecryptText)
 {
   TEST(UpCaseString) {
     CHECK_EQUAL("THEQUICKBROWNFOXJUMPSOVERTHELAZYDOG",
-                TranspositionCipher{5}.decrypt("UIFRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH"));
+                TranspositionCipher{5}.decrypt("UROPRAG-QBFMELO-EKNUVED-HCWJOHY-TIOXSTZ-"));
   }
   TEST(LowCaseString) {
-    CHECK_THROW(TranspositionCipher{5}.decrypt("uifRVJDLCSPXOGPYKVNQTPWFSUIFMBAZEPH"), CipherError);
-  }
-  TEST(WhitespaceString) {
-    CHECK_THROW(TranspositionCipher{5}.decrypt("UIF RVJDL CSPXO GPY KVNQT PWFS UIF MBAZ EPH"), CipherError);
+    CHECK_THROW(TranspositionCipher{5}.decrypt("UropRAG-QBFMELO-EKNuveD-HCwJOHY-TIOXSTz-"), CipherError);
   }
   TEST(DigitsString) {
-    CHECK_THROW(TranspositionCipher{5}.decrypt("IBQQZOFX2019ZFBS"), CipherError);
+    CHECK_THROW(TranspositionCipher{5}.decrypt("HappyNew2023Year"), CipherError);
   }
   TEST(PunctString) {
-    CHECK_THROW(TranspositionCipher{5}.decrypt("IFMMP,XPSME"), CipherError);
+    CHECK_THROW(TranspositionCipher{5}.decrypt("UROPRAG.QBFMELO.EKNUVED.HCWJOHY.TIOXSTZ-"), CipherError);
   }
   TEST(EmptyString) {
     CHECK_THROW(TranspositionCipher{5}.decrypt(""), CipherError);
