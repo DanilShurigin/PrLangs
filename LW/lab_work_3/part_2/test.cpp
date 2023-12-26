@@ -2,16 +2,20 @@
 
 #include "src/transposition_cipher.hpp"
 #include "src/cipher_exception.h"
+#include "exception"
 
 SUITE(KeyTest) {
   TEST(ValidKey) {
-    CHECK_EQUAL("A-AAAA", TranspositionCipher(3).encrypt("AAAAA"));
+    CHECK_EQUAL("AA-AA-AA-", TranspositionCipher(3).encrypt("AAAAAA"));
   }
-  TEST(LongKey) {
-    CHECK_THROW(TranspositionCipher(-10).encrypt("AAAAA"), CipherError);
+  TEST(BelowZeroKey) {
+    CHECK_THROW(TranspositionCipher(-10).encrypt("AAAAAA"), std::exception);
   }
-  TEST(LowCaseKey) {
-    CHECK_THROW(TranspositionCipher(0).encrypt("AAAAA"), CipherError);
+  TEST(ZeroKey) {
+    CHECK_THROW(TranspositionCipher(0).encrypt("AAAAAA"), CipherError);
+  }
+  TEST(TooLongKey) {
+    CHECK_THROW(TranspositionCipher(5).encrypt("AAAA"), CipherError);
   }
 }
 

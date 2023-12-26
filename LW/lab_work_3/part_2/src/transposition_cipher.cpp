@@ -12,16 +12,20 @@ TranspositionCipher::TranspositionCipher(unsigned key, char symbol) {
 std::string TranspositionCipher::encrypt(const std::string& message) {
   std::string cleaned_text = getValidOpenText(message);
 
-  int message_length = cleaned_text.size();
+  size_t message_length = cleaned_text.size();
+
+
+  if (message_length < key_*2)
+    throw CipherError("Invalid key for this text");
 
   int on_table_length = (message_length/key_ + 1) * key_;
 
   std::string encrypted_message(on_table_length, symbol_);
 
-  int rows = on_table_length / key_;
+  uint rows = on_table_length / key_;
 
-  for (int i=0; i<message_length; ++i) {
-    int trp_i = rows * (key_ - (1 + (i % key_))) + (i / key_);
+  for (uint i=0; i<message_length; ++i) {
+    uint trp_i = rows * (key_ - (1 + (i % key_))) + (i / key_);
     encrypted_message.at(trp_i) = cleaned_text.at(i);
   }
   return encrypted_message;
