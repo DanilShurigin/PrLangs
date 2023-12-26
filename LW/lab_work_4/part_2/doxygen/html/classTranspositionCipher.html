@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.9.4"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Лаб. работа №4. Шифр Маршрутной перестановки.: Класс TranspositionCipher</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectalign">
+   <div id="projectname">Лаб. работа №4. Шифр Маршрутной перестановки.
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.4 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search",'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Открытые члены</a> &#124;
+<a href="#pri-methods">Закрытые члены</a> &#124;
+<a href="#pri-attribs">Закрытые данные</a> &#124;
+<a href="classTranspositionCipher-members.html">Полный список членов класса</a>  </div>
+  <div class="headertitle"><div class="title">Класс TranspositionCipher</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p>Класс для зашифрованиея и расшифрования текста.  
+ <a href="classTranspositionCipher.html#details">Подробнее...</a></p>
+
+<p><code>#include &lt;<a class="el" href="transposition__cipher_8h_source.html">transposition_cipher.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Открытые члены</h2></td></tr>
+<tr class="memitem:a2ba9f15b57b1fb6da8fcc6deaadb9d53"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#a2ba9f15b57b1fb6da8fcc6deaadb9d53">TranspositionCipher</a> ()=delete</td></tr>
+<tr class="separator:a2ba9f15b57b1fb6da8fcc6deaadb9d53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a20815d81cd93afa5a4d898ec3cc6fcd9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#a20815d81cd93afa5a4d898ec3cc6fcd9">TranspositionCipher</a> (unsigned key, char symbol='-')</td></tr>
+<tr class="memdesc:a20815d81cd93afa5a4d898ec3cc6fcd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Конструктор с ключом.  <a href="classTranspositionCipher.html#a20815d81cd93afa5a4d898ec3cc6fcd9">Подробнее...</a><br /></td></tr>
+<tr class="separator:a20815d81cd93afa5a4d898ec3cc6fcd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec4e4fa59cc191d20a7fa29f9e9efbe7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#aec4e4fa59cc191d20a7fa29f9e9efbe7">encrypt</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:aec4e4fa59cc191d20a7fa29f9e9efbe7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Зашифровать текст.  <a href="classTranspositionCipher.html#aec4e4fa59cc191d20a7fa29f9e9efbe7">Подробнее...</a><br /></td></tr>
+<tr class="separator:aec4e4fa59cc191d20a7fa29f9e9efbe7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad28845e79b6e06b9768b307ad86204d0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#ad28845e79b6e06b9768b307ad86204d0">decrypt</a> (const std::string &amp;message)</td></tr>
+<tr class="memdesc:ad28845e79b6e06b9768b307ad86204d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Расшифровать текст.  <a href="classTranspositionCipher.html#ad28845e79b6e06b9768b307ad86204d0">Подробнее...</a><br /></td></tr>
+<tr class="separator:ad28845e79b6e06b9768b307ad86204d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Закрытые члены</h2></td></tr>
+<tr class="memitem:a94fc09f917e4ac043fbdb4927b5ef855"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#a94fc09f917e4ac043fbdb4927b5ef855">getValidOpenText</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a94fc09f917e4ac043fbdb4927b5ef855"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить и получить открытый текст.  <a href="classTranspositionCipher.html#a94fc09f917e4ac043fbdb4927b5ef855">Подробнее...</a><br /></td></tr>
+<tr class="separator:a94fc09f917e4ac043fbdb4927b5ef855"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e5c67bb0c3150762ced4c4c5d4d51f8"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#a3e5c67bb0c3150762ced4c4c5d4d51f8">getValidCipherText</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a3e5c67bb0c3150762ced4c4c5d4d51f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Проверить и получить шифротекст.  <a href="classTranspositionCipher.html#a3e5c67bb0c3150762ced4c4c5d4d51f8">Подробнее...</a><br /></td></tr>
+<tr class="separator:a3e5c67bb0c3150762ced4c4c5d4d51f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Закрытые данные</h2></td></tr>
+<tr class="memitem:a31cf3e39942ebf0dc7cbf39ff6f70104"><td class="memItemLeft" align="right" valign="top">unsigned&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#a31cf3e39942ebf0dc7cbf39ff6f70104">key_</a></td></tr>
+<tr class="memdesc:a31cf3e39942ebf0dc7cbf39ff6f70104"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ключ.  <a href="classTranspositionCipher.html#a31cf3e39942ebf0dc7cbf39ff6f70104">Подробнее...</a><br /></td></tr>
+<tr class="separator:a31cf3e39942ebf0dc7cbf39ff6f70104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f7a83b3c9ed7dd88380a2d145796547"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classTranspositionCipher.html#a9f7a83b3c9ed7dd88380a2d145796547">symbol_</a></td></tr>
+<tr class="memdesc:a9f7a83b3c9ed7dd88380a2d145796547"><td class="mdescLeft">&#160;</td><td class="mdescRight">Символ-заполнитель.  <a href="classTranspositionCipher.html#a9f7a83b3c9ed7dd88380a2d145796547">Подробнее...</a><br /></td></tr>
+<tr class="separator:a9f7a83b3c9ed7dd88380a2d145796547"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p >Класс для зашифрованиея и расшифрования текста. </p>
+</div><h2 class="groupheader">Конструктор(ы)</h2>
+<a id="a2ba9f15b57b1fb6da8fcc6deaadb9d53" name="a2ba9f15b57b1fb6da8fcc6deaadb9d53"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ba9f15b57b1fb6da8fcc6deaadb9d53">&#9670;&nbsp;</a></span>TranspositionCipher() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">TranspositionCipher::TranspositionCipher </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">delete</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a20815d81cd93afa5a4d898ec3cc6fcd9" name="a20815d81cd93afa5a4d898ec3cc6fcd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a20815d81cd93afa5a4d898ec3cc6fcd9">&#9670;&nbsp;</a></span>TranspositionCipher() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TranspositionCipher::TranspositionCipher </td>
+          <td>(</td>
+          <td class="paramtype">unsigned&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>symbol</em> = <code>'-'</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Конструктор с ключом. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">key</td><td>Ключ (число от 2 и больше). </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">symbol</td><td>Символ-заполнитель пробелов. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Методы</h2>
+<a id="ad28845e79b6e06b9768b307ad86204d0" name="ad28845e79b6e06b9768b307ad86204d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad28845e79b6e06b9768b307ad86204d0">&#9670;&nbsp;</a></span>decrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TranspositionCipher::decrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Расшифровать текст. </p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCipherError.html" title="Класс ошибок.">CipherError</a></td><td>Ошибка расшифрования. Параметры исключений: <div class="fragment"><div class="line">what = <span class="stringliteral">&quot;Empty text&quot;</span></div>
+<div class="line">       <span class="stringliteral">&quot;Invalid text&quot;</span></div>
+</div><!-- fragment --></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Зашифрованный текст. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::string Расшифрованное сообщение. </dd></dl>
+
+</div>
+</div>
+<a id="aec4e4fa59cc191d20a7fa29f9e9efbe7" name="aec4e4fa59cc191d20a7fa29f9e9efbe7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec4e4fa59cc191d20a7fa29f9e9efbe7">&#9670;&nbsp;</a></span>encrypt()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TranspositionCipher::encrypt </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>message</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Зашифровать текст. </p>
+<dl class="exception"><dt>Исключения</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname"><a class="el" href="classCipherError.html" title="Класс ошибок.">CipherError</a></td><td>Ошибка зашифрования. Параметры исключений: <div class="fragment"><div class="line">what = <span class="stringliteral">&quot;Empty text&quot;</span></div>
+</div><!-- fragment --></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Открытый текст. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::string Зашифрованное сообщение. </dd></dl>
+
+</div>
+</div>
+<a id="a3e5c67bb0c3150762ced4c4c5d4d51f8" name="a3e5c67bb0c3150762ced4c4c5d4d51f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e5c67bb0c3150762ced4c4c5d4d51f8">&#9670;&nbsp;</a></span>getValidCipherText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TranspositionCipher::getValidCipherText </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверить и получить шифротекст. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>Шифротекст. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::wstring Обработанная строка. </dd></dl>
+
+</div>
+</div>
+<a id="a94fc09f917e4ac043fbdb4927b5ef855" name="a94fc09f917e4ac043fbdb4927b5ef855"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94fc09f917e4ac043fbdb4927b5ef855">&#9670;&nbsp;</a></span>getValidOpenText()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string TranspositionCipher::getValidOpenText </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Проверить и получить открытый текст. </p>
+<dl class="params"><dt>Аргументы</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">s</td><td>Открытый текст. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Возвращает</dt><dd>std::wstring Обработанная строка. </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">Данные класса</h2>
+<a id="a31cf3e39942ebf0dc7cbf39ff6f70104" name="a31cf3e39942ebf0dc7cbf39ff6f70104"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31cf3e39942ebf0dc7cbf39ff6f70104">&#9670;&nbsp;</a></span>key_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned TranspositionCipher::key_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Ключ. </p>
+
+</div>
+</div>
+<a id="a9f7a83b3c9ed7dd88380a2d145796547" name="a9f7a83b3c9ed7dd88380a2d145796547"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f7a83b3c9ed7dd88380a2d145796547">&#9670;&nbsp;</a></span>symbol_</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char TranspositionCipher::symbol_</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Символ-заполнитель. </p>
+
+</div>
+</div>
+<hr/>Объявления и описания членов классов находятся в файлах:<ul>
+<li><a class="el" href="transposition__cipher_8h_source.html">transposition_cipher.h</a></li>
+<li><a class="el" href="transposition__cipher_8cpp.html">transposition_cipher.cpp</a></li>
+</ul>
+</div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.4
+</small></address>
+</body>
+</html>

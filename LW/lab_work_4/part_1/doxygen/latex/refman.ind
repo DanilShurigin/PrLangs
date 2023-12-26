@@ -1,0 +1,78 @@
+\begin{theindex}
+
+  \item {alphaNum}
+    \subitem {modAlphaCipher}, \hyperpage{11}
+
+  \indexspace
+
+  \item {cipher\_error}, \hyperpage{5}
+    \subitem {cipher\_error}, \hyperpage{5, 6}
+    \subitem {msg}, \hyperpage{6}
+    \subitem {what}, \hyperpage{6}
+  \item {convert}
+    \subitem {modAlphaCipher}, \hyperpage{9}
+
+  \indexspace
+
+  \item {decrypt}
+    \subitem {modAlphaCipher}, \hyperpage{9}
+
+  \indexspace
+
+  \item {encrypt}
+    \subitem {modAlphaCipher}, \hyperpage{10}
+
+  \indexspace
+
+  \item {getValidCipherText}
+    \subitem {modAlphaCipher}, \hyperpage{10}
+  \item {getValidKey}
+    \subitem {modAlphaCipher}, \hyperpage{10}
+  \item {getValidOpenText}
+    \subitem {modAlphaCipher}, \hyperpage{11}
+
+  \indexspace
+
+  \item {isValid}
+    \subitem {main.cpp}, \hyperpage{13}
+
+  \indexspace
+
+  \item {key}
+    \subitem {modAlphaCipher}, \hyperpage{11}
+
+  \indexspace
+
+  \item {main}
+    \subitem {main.cpp}, \hyperpage{14}
+  \item {main.cpp}, \hyperpage{13}
+    \subitem {isValid}, \hyperpage{13}
+    \subitem {main}, \hyperpage{14}
+  \item {modAlphaCipher}, \hyperpage{7}
+    \subitem {alphaNum}, \hyperpage{11}
+    \subitem {convert}, \hyperpage{9}
+    \subitem {decrypt}, \hyperpage{9}
+    \subitem {encrypt}, \hyperpage{10}
+    \subitem {getValidCipherText}, \hyperpage{10}
+    \subitem {getValidKey}, \hyperpage{10}
+    \subitem {getValidOpenText}, \hyperpage{11}
+    \subitem {key}, \hyperpage{11}
+    \subitem {modAlphaCipher}, \hyperpage{7, 8}
+    \subitem {numAlpha}, \hyperpage{11}
+  \item {modAlphaCipher.cpp}, \hyperpage{14}
+  \item {modAlphaCipher.h}, \hyperpage{14}
+  \item {modException.h}, \hyperpage{16}
+  \item {msg}
+    \subitem {cipher\_error}, \hyperpage{6}
+
+  \indexspace
+
+  \item {numAlpha}
+    \subitem {modAlphaCipher}, \hyperpage{11}
+
+  \indexspace
+
+  \item {what}
+    \subitem {cipher\_error}, \hyperpage{6}
+
+\end{theindex}

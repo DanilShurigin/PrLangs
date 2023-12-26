@@ -1,0 +1,16 @@
+\hypertarget{cipher__exception_8h_source}{}\doxysection{cipher\+\_\+exception.\+h}
+\mbox{\hyperlink{cipher__exception_8h}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <stdexcept>}}
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{13 \textcolor{keyword}{class }\mbox{\hyperlink{classCipherError}{CipherError}} : \textcolor{keyword}{public} std::invalid\_argument \{}
+\DoxyCodeLine{14 \textcolor{keyword}{public}:}
+\DoxyCodeLine{20   \textcolor{keyword}{explicit} \mbox{\hyperlink{classCipherError_a4b70b3b2ace1ae5897c74daa5081fee7}{CipherError}}(\textcolor{keyword}{const} std::string\& msg):}
+\DoxyCodeLine{21       std::invalid\_argument(msg) \{  \}}
+\DoxyCodeLine{27   \textcolor{keyword}{explicit} \mbox{\hyperlink{classCipherError_a4f55d492524c8faaa2a110c98ca1ed0a}{CipherError}}(\textcolor{keyword}{const} \textcolor{keywordtype}{char}* msg):}
+\DoxyCodeLine{28       std::invalid\_argument(msg) \{  \}}
+\DoxyCodeLine{29 \};}
+
+\end{DoxyCode}

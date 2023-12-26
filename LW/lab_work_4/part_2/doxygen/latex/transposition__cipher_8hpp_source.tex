@@ -1,0 +1,25 @@
+\hypertarget{transposition__cipher_8hpp_source}{}\doxysection{transposition\+\_\+cipher.\+hpp}
+\mbox{\hyperlink{transposition__cipher_8hpp}{См. документацию.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 }
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#pragma once}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{preprocessor}{\#include <string>}}
+\DoxyCodeLine{10 \textcolor{preprocessor}{\#include <vector>}}
+\DoxyCodeLine{11 }
+\DoxyCodeLine{15 \textcolor{keyword}{class }\mbox{\hyperlink{classTranspositionCipher}{TranspositionCipher}} \{}
+\DoxyCodeLine{16   \textcolor{keyword}{public}:}
+\DoxyCodeLine{17     \mbox{\hyperlink{classTranspositionCipher_a2ba9f15b57b1fb6da8fcc6deaadb9d53}{TranspositionCipher}}() = \textcolor{keyword}{delete};}
+\DoxyCodeLine{24     \mbox{\hyperlink{classTranspositionCipher_a2ba9f15b57b1fb6da8fcc6deaadb9d53}{TranspositionCipher}}(\textcolor{keywordtype}{unsigned} key, \textcolor{keywordtype}{char} symbol=\textcolor{charliteral}{'-\/'});}
+\DoxyCodeLine{25 }
+\DoxyCodeLine{38     std::string \mbox{\hyperlink{classTranspositionCipher_aec4e4fa59cc191d20a7fa29f9e9efbe7}{encrypt}}(\textcolor{keyword}{const} std::string\& message);}
+\DoxyCodeLine{52     std::string \mbox{\hyperlink{classTranspositionCipher_ad28845e79b6e06b9768b307ad86204d0}{decrypt}}(\textcolor{keyword}{const} std::string\& message);}
+\DoxyCodeLine{53   \textcolor{keyword}{private}:}
+\DoxyCodeLine{54     \textcolor{keywordtype}{unsigned} \mbox{\hyperlink{classTranspositionCipher_a31cf3e39942ebf0dc7cbf39ff6f70104}{key\_}};  }
+\DoxyCodeLine{55     \textcolor{keywordtype}{char} \mbox{\hyperlink{classTranspositionCipher_a9f7a83b3c9ed7dd88380a2d145796547}{symbol\_}};   }
+\DoxyCodeLine{56 }
+\DoxyCodeLine{63     std::string \mbox{\hyperlink{classTranspositionCipher_a94fc09f917e4ac043fbdb4927b5ef855}{getValidOpenText}}(\textcolor{keyword}{const} std::string \& s);}
+\DoxyCodeLine{70     std::string \mbox{\hyperlink{classTranspositionCipher_a3e5c67bb0c3150762ced4c4c5d4d51f8}{getValidCipherText}}(\textcolor{keyword}{const} std::string \& s);}
+\DoxyCodeLine{71 \};}
+
+\end{DoxyCode}

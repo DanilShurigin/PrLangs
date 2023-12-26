@@ -1,0 +1,190 @@
+\hypertarget{classTranspositionCipher}{}\doxysection{Класс Transposition\+Cipher}
+\label{classTranspositionCipher}\index{TranspositionCipher@{TranspositionCipher}}
+
+
+Класс для зашифрованиея и расшифрования текста.  
+
+
+
+
+{\ttfamily \#include $<$transposition\+\_\+cipher.\+h$>$}
+
+\doxysubsection*{Открытые члены}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classTranspositionCipher_a2ba9f15b57b1fb6da8fcc6deaadb9d53}{Transposition\+Cipher}} ()=delete
+\item 
+\mbox{\hyperlink{classTranspositionCipher_a20815d81cd93afa5a4d898ec3cc6fcd9}{Transposition\+Cipher}} (unsigned key, char symbol=\textquotesingle{}-\/\textquotesingle{})
+\begin{DoxyCompactList}\small\item\em Конструктор с ключом. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTranspositionCipher_aec4e4fa59cc191d20a7fa29f9e9efbe7}{encrypt}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Зашифровать текст. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTranspositionCipher_ad28845e79b6e06b9768b307ad86204d0}{decrypt}} (const std\+::string \&message)
+\begin{DoxyCompactList}\small\item\em Расшифровать текст. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые члены}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \mbox{\hyperlink{classTranspositionCipher_a94fc09f917e4ac043fbdb4927b5ef855}{get\+Valid\+Open\+Text}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Проверить и получить открытый текст. \end{DoxyCompactList}\item 
+std\+::string \mbox{\hyperlink{classTranspositionCipher_a3e5c67bb0c3150762ced4c4c5d4d51f8}{get\+Valid\+Cipher\+Text}} (const std\+::string \&s)
+\begin{DoxyCompactList}\small\item\em Проверить и получить шифротекст. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Закрытые данные}
+\begin{DoxyCompactItemize}
+\item 
+unsigned \mbox{\hyperlink{classTranspositionCipher_a31cf3e39942ebf0dc7cbf39ff6f70104}{key\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Ключ. \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{classTranspositionCipher_a9f7a83b3c9ed7dd88380a2d145796547}{symbol\+\_\+}}
+\begin{DoxyCompactList}\small\item\em Символ-\/заполнитель. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Класс для зашифрованиея и расшифрования текста. 
+
+\doxysubsection{Конструктор(ы)}
+\mbox{\Hypertarget{classTranspositionCipher_a2ba9f15b57b1fb6da8fcc6deaadb9d53}\label{classTranspositionCipher_a2ba9f15b57b1fb6da8fcc6deaadb9d53}} 
+\index{TranspositionCipher@{TranspositionCipher}!TranspositionCipher@{TranspositionCipher}}
+\index{TranspositionCipher@{TranspositionCipher}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{TranspositionCipher()}{TranspositionCipher()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Transposition\+Cipher\+::\+Transposition\+Cipher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{classTranspositionCipher_a20815d81cd93afa5a4d898ec3cc6fcd9}\label{classTranspositionCipher_a20815d81cd93afa5a4d898ec3cc6fcd9}} 
+\index{TranspositionCipher@{TranspositionCipher}!TranspositionCipher@{TranspositionCipher}}
+\index{TranspositionCipher@{TranspositionCipher}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{TranspositionCipher()}{TranspositionCipher()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Transposition\+Cipher\+::\+Transposition\+Cipher (\begin{DoxyParamCaption}\item[{unsigned}]{key,  }\item[{char}]{symbol = {\ttfamily \textquotesingle{}-\/\textquotesingle{}} }\end{DoxyParamCaption})}
+
+
+
+Конструктор с ключом. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em key} & Ключ (число от 2 и больше). \\
+\hline
+\mbox{\texttt{ in}}  & {\em symbol} & Символ-\/заполнитель пробелов. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Методы}
+\mbox{\Hypertarget{classTranspositionCipher_ad28845e79b6e06b9768b307ad86204d0}\label{classTranspositionCipher_ad28845e79b6e06b9768b307ad86204d0}} 
+\index{TranspositionCipher@{TranspositionCipher}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{decrypt()}{decrypt()}}
+{\footnotesize\ttfamily std\+::string Transposition\+Cipher\+::decrypt (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Расшифровать текст. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classCipherError}{Cipher\+Error}}} & Ошибка расшифрования. Параметры исключений\+: 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{what = \textcolor{stringliteral}{"{}Empty text"{}}}
+\DoxyCodeLine{       \textcolor{stringliteral}{"{}Invalid text"{}}}
+
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em message} & Зашифрованный текст. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::string Расшифрованное сообщение. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTranspositionCipher_aec4e4fa59cc191d20a7fa29f9e9efbe7}\label{classTranspositionCipher_aec4e4fa59cc191d20a7fa29f9e9efbe7}} 
+\index{TranspositionCipher@{TranspositionCipher}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{encrypt()}{encrypt()}}
+{\footnotesize\ttfamily std\+::string Transposition\+Cipher\+::encrypt (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Зашифровать текст. 
+
+
+\begin{DoxyExceptions}{Исключения}
+{\em \mbox{\hyperlink{classCipherError}{Cipher\+Error}}} & Ошибка зашифрования. Параметры исключений\+: 
+\begin{DoxyCode}{1}
+\DoxyCodeLine{what = \textcolor{stringliteral}{"{}Empty text"{}}}
+
+\end{DoxyCode}
+\\
+\hline
+\end{DoxyExceptions}
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em message} & Открытый текст. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::string Зашифрованное сообщение. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTranspositionCipher_a3e5c67bb0c3150762ced4c4c5d4d51f8}\label{classTranspositionCipher_a3e5c67bb0c3150762ced4c4c5d4d51f8}} 
+\index{TranspositionCipher@{TranspositionCipher}!getValidCipherText@{getValidCipherText}}
+\index{getValidCipherText@{getValidCipherText}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{getValidCipherText()}{getValidCipherText()}}
+{\footnotesize\ttfamily std\+::string Transposition\+Cipher\+::get\+Valid\+Cipher\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверить и получить шифротекст. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em s} & Шифротекст. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::wstring Обработанная строка. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classTranspositionCipher_a94fc09f917e4ac043fbdb4927b5ef855}\label{classTranspositionCipher_a94fc09f917e4ac043fbdb4927b5ef855}} 
+\index{TranspositionCipher@{TranspositionCipher}!getValidOpenText@{getValidOpenText}}
+\index{getValidOpenText@{getValidOpenText}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{getValidOpenText()}{getValidOpenText()}}
+{\footnotesize\ttfamily std\+::string Transposition\+Cipher\+::get\+Valid\+Open\+Text (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Проверить и получить открытый текст. 
+
+
+\begin{DoxyParams}[1]{Аргументы}
+\mbox{\texttt{ in}}  & {\em s} & Открытый текст. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Возвращает}
+std\+::wstring Обработанная строка. 
+\end{DoxyReturn}
+
+
+\doxysubsection{Данные класса}
+\mbox{\Hypertarget{classTranspositionCipher_a31cf3e39942ebf0dc7cbf39ff6f70104}\label{classTranspositionCipher_a31cf3e39942ebf0dc7cbf39ff6f70104}} 
+\index{TranspositionCipher@{TranspositionCipher}!key\_@{key\_}}
+\index{key\_@{key\_}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{key\_}{key\_}}
+{\footnotesize\ttfamily unsigned Transposition\+Cipher\+::key\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Ключ. 
+
+\mbox{\Hypertarget{classTranspositionCipher_a9f7a83b3c9ed7dd88380a2d145796547}\label{classTranspositionCipher_a9f7a83b3c9ed7dd88380a2d145796547}} 
+\index{TranspositionCipher@{TranspositionCipher}!symbol\_@{symbol\_}}
+\index{symbol\_@{symbol\_}!TranspositionCipher@{TranspositionCipher}}
+\doxysubsubsection{\texorpdfstring{symbol\_}{symbol\_}}
+{\footnotesize\ttfamily char Transposition\+Cipher\+::symbol\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Символ-\/заполнитель. 
+
+
+
+Объявления и описания членов классов находятся в файлах\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{transposition__cipher_8h}{transposition\+\_\+cipher.\+h}}\item 
+\mbox{\hyperlink{transposition__cipher_8cpp}{transposition\+\_\+cipher.\+cpp}}\end{DoxyCompactItemize}
